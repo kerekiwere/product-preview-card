@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: hsl(212, 21%, 14%);
+    --secondary-color: hsl(0, 0%, 100%);
+    --background-color: hsl(30, 38%, 92%);
+    --text-color: hsl(228, 12%, 48%);
+    --accent-color: hsl(158, 36%, 37%);
+    --hover-color: hsl(158, 36%, 20%);
+    --primary-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Fraunces', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: var(--primary-font);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background: var(--background-color);
+    color: var(--text-color);
+    display: grid;
+    place-items: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.product {
+    display: grid;
+    max-width: 600px;
+    background: var(--secondary-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.product__content {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+@media (min-width:600px) {
+    .product {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product__content {
+        padding: 2rem;
+    }
+
+}
+
+.product__category {
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+}
+
+.product__title {
+    font-family: var(--secondary-font);
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--primary-color);
+}
+
+.product__price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.product__price--new {
+    font-size: 2rem;
+    font-family: var(--secondary-font);
+    color: var(--accent-color);
+}
+
+.product__price--old {
+    text-decoration: line-through;
+}
+
+.button {
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    background: var(--hover-color);
+}
+
+.button--cart::before {
+    content: "";
+    display: inline-block;
+    background-image: url("../images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+    margin-right: 0.75em;
+}
